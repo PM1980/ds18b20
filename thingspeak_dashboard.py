@@ -111,7 +111,7 @@ def main():
         )
 
     if selected == "Home":
-        st.title("🌡️ Temperature Monitoring System")
+        st.title("🌡️ Monitoramento da temperatura com sensor DS18B20")
         st.subheader("Tecomat/UFPE - Monitoramento da temperatura de blocos de concreto")
 
         df = fetch_data()
@@ -121,14 +121,14 @@ def main():
 
             with col1:
                 current_temp1 = df['field1'].iloc[-1]
-                st.metric("Current Temperature - Sensor 1", f"{current_temp1:.2f} °C", 
+                st.metric("Temperatura atual - Sensor 1", f"{current_temp1:.2f} °C", 
                          f"{current_temp1 - df['field1'].iloc[-2]:.2f} °C")
                 fig_temp1 = create_plot(df, 'field1', '', 'Temperature Sensor 1 (°C)', 'red')
                 st.plotly_chart(fig_temp1, use_container_width=True, config={'displayModeBar': False})
 
             with col2:
                 current_temp2 = df['field2'].iloc[-1]
-                st.metric("Current Temperature - Sensor 2", f"{current_temp2:.2f} °C", 
+                st.metric("Temperatura atual - Sensor 2", f"{current_temp2:.2f} °C", 
                          f"{current_temp2 - df['field2'].iloc[-2]:.2f} °C")
                 fig_temp2 = create_plot(df, 'field2', '', 'Temperature Sensor 2 (°C)', 'blue')
                 st.plotly_chart(fig_temp2, use_container_width=True, config={'displayModeBar': False})
