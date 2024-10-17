@@ -170,7 +170,7 @@ def main():
     elif selected == "Setup":
         st.title("🔧 Hardware Setup")
         st.subheader("Microcontroller and Sensor Details")
-        st.image("setup_esp_dht22.png", use_column_width=True)
+        st.image("esp32_ds18b20.png", use_column_width=True)
         st.write("This setup uses an ESP32 microcontroller connected to two temperature sensors. Data is sent using Thingspeak.")
 
     elif selected == "Code":
